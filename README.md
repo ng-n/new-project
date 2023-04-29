@@ -26,4 +26,60 @@ Create a local repository on your local machine:
 3. Initialize a new public Git repository inside the _new-project_ directory:
 
 	`git init`
+4. Create a new file called _README.md_:
+
+	`touch README.md`
+> After editing the file, save it.
+
+5. Prepare the _README.md_ file for the commit:
+
+	`git add README.md`
+
+6. Commit the changes in the local repository with the commit message "init":
+	
+	`git commit -m "init"`
+
+Create a link between your local Git repository and remote repository on Github to push changes to the remote repository:
+```
+	git remote add origin git@github.com:<username>/new-project.git` 
+	git push -u origin main
+```
+7. Create a new branch called `development` and switch to it:
+
+	`git checkout -b development`
+
+> In case you need to switch from main branch to development branch, process the following command:
+
+>	`git checkout development # from main to development branch` </br>
+>	`git checkout main	  # from development to main branch`
+
+> To check which branch you are in:
+
+>	`git branch`
+
+8. Add instructions to the _README.md_ file and prepare the file for commit:
+> After editing the file, save it. 
+
+	`git add README.md`
+	
+9. Commit the changes in the _development_ branch with the commit message:
+```
+	git commit -m "add instructions"
+	git push -u origin development        # push the changes with the _development_ branch to the remote GitHub repository
+```
+
+10. Merge the changes from the _development_ branch to the _main_ branch:
+```
+	git checkout main
+	git merge development 
+```
+11. Check status to ensure everything is up to date:
+	
+	`git status`
+
+12. Commit the merging changes in the local repository:
+```
+	git commit -m "Merge changes from development into main branch"
+	git push -u origin main`		# push the merged changes in the _main_ branch to the remote repository
+```
 
